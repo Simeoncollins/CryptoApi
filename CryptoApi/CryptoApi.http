@@ -1,0 +1,26 @@
+@CryptoApi_HostAddress = http://localhost:5111
+@contentType = application/json
+
+### 1. Get all scraped data
+GET {{baseUrl}}/api/cryptoapi
+Accept: {{contentType}}
+
+### 2. Get first 3 items
+GET {{baseUrl}}/api/cryptoapi/count/3
+Accept: {{contentType}}
+
+### 3. Get specific items by symbols (BTC and ETH)
+GET {{baseUrl}}/api/cryptoapi/list?symbols=BTC,ETH
+Accept: {{contentType}}
+
+### 4. Search for items containing "bit"
+GET {{baseUrl}}/api/cryptoapi/search?query=bit
+Accept: {{contentType}}
+
+### 5. Test with no symbols (should return error)
+GET {{baseUrl}}/api/cryptoapi/list
+Accept: {{contentType}}
+
+### 6. Test with no query (should return error)
+GET {{baseUrl}}/api/cryptoapi/search
+Accept: {{contentType}}
